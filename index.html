@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<div id="notification" class="notification" style="display: none;">Item added to cart!</div>
+	<div id="cart" class="cart" onclick="showCartModal()">
+		🛒 <span id="cart-count">0</span>
+	</div>
+	<div id="cart-modal" class="cart-modal" style="display: none;">
+    <div class="cart-modal-content">
+        <span class="close" onclick="closeCartModal()">&times;</span>
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="cart-empty-message" style="display: none;">Your cart is empty.</p>
+    </div>
+</div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Gram Gold Jewelry</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>One-Gram Gold Jewelry</h1>
+        <nav>
+            <a href="#products">Shop</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Left Pane Sidebar -->
+        <div class="left-pane">
+            <h2>Categories</h2>
+            <ul class="item-list">
+                <li><a href="#" onclick="showCategory('necklaces')">Necklaces</a></li>
+                <li>
+                    <a href="#" onclick="showCategory('bracelets')">Bracelets</a>
+                    <ul class="sub-category">
+                        <li><a href="#" onclick="showCategory('bracelets', 'men')">Men's Bracelets</a></li>
+                        <li><a href="#" onclick="showCategory('bracelets', 'women')">Women's Bracelets</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" onclick="showCategory('rings')">Rings</a>
+                    <ul class="sub-category">
+                        <li><a href="#" onclick="showCategory('rings', 'men')">Men's Rings</a></li>
+                        <li><a href="#" onclick="showCategory('rings', 'women')">Women's Rings</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" onclick="showCategory('earrings')">Earrings</a></li>
+                <li><a href="#" onclick="showCategory('sets')">Gold Sets</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <section id="products">
+                <h2>Our Products</h2>
+                <div id="product-display" class="product-list">
+                    <!-- Product items will be displayed here -->
+                </div>
+            </section>
+
+            <section id="about">
+                <h2>About Us</h2>
+                <p>We offer high-quality, one-gram gold jewelry that is both affordable and beautiful.</p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <form action="/contact" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 One-Gram Gold Jewelry</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
